@@ -7,6 +7,8 @@ namespace MoodAnalyzerProblems
         static void Main(string[] args)
         {
             Console.WriteLine("\n Welcome to MoodAnalyzer Problem..");
+            ModeAnalyzer modeAnalyzer =new ModeAnalyzer();
+            modeAnalyzer.AnalyzeMood("happy");
         }
     }
 }
