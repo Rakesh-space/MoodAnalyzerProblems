@@ -10,6 +10,11 @@ namespace MoodAnalyzerProblems
     {
         public string message;
 
+        public ModeAnalyzer()
+        {
+            Console.WriteLine("default constructor");
+        }
+
         public ModeAnalyzer(string message)
         {
             this.message = message;
@@ -31,6 +36,5 @@ namespace MoodAnalyzerProblems
                 throw new CustomException(CustomException.ExceptionType.NUll_Type_Exception, "Message Should Not Be Null");
             }
         }
-
     }
 }
