@@ -27,6 +27,10 @@ namespace MoodAnalyzerProblems
                 {
                     return "SAD";
                 }
+                else if (message.Contains(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.Empty_Type_Exception, "message should not be null");
+                }
                 else
                     return "HAPPY";
             }

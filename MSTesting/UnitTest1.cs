@@ -154,6 +154,29 @@ namespace MSTesting
             }
             actual.Equals(expected);
         }
+
+        [TestMethod]
+        public void testMoodAlalyserUisngInvokeMethod()
+        {
+            string message = "Happy";
+            string methodName = "AnalyseMood";
+            string expected = "Happy";
+            string actual = " ";
+            try
+            {
+                ModeAnalyserFactory factory = new ModeAnalyserFactory();
+
+                actual = factory.InvokeAnalyserMethod(message, methodName);
+            }
+            catch (CustomException exception)
+            {
+                throw new Exception(exception.Message);
+
+            }
+            Assert.AreEqual(expected, actual);
+
+        }
+
     }
-    
+
 }

@@ -14,7 +14,8 @@ namespace MoodAnalyzerProblems
             NUll_Type_Exception,
             Empty_Type_Exception,
             Class_Not_Found,
-            CONSTRUCTOR_NOT_FOUND
+            CONSTRUCTOR_NOT_FOUND,
+            No_Such_Method
 
         }
 
@@ -22,6 +23,7 @@ namespace MoodAnalyzerProblems
         {
             this.type = type;
         }
+
 
     }
 }
