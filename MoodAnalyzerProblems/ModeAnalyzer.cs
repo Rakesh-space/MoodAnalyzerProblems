@@ -7,8 +7,17 @@ using System.Threading.Tasks;
 namespace MoodAnalyzerProblems
 {
     public class ModeAnalyzer
-    {   
-            public string AnalyzeMood(string message)
+    {
+
+        public string message;
+
+        public ModeAnalyzer(string message)
+        {
+            this.message = message;
+        }
+        public string AnalyzeMood()
+        {
+            try
             {
                 if (message.ToLower().Contains("sad"))
                 {
@@ -17,6 +26,11 @@ namespace MoodAnalyzerProblems
                 else
                     return "HAPPY";
             }
-        
+            catch (NullReferenceException ex)
+            {
+                return "happy";
+            }
+        }
+
     }
 }
