@@ -22,5 +22,6 @@ namespace MoodAnalyzerProblems
         {
             this.type = type;
         }
+
     }
 }

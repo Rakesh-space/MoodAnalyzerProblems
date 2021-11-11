@@ -8,10 +8,10 @@ namespace MSTesting
     [TestClass]
     public class UnitTest1  //here performed the unit testing for class
     {
-        
+
         ModeAnalyserFactory factory = null;
 
-        [TestMethod]
+        [TestInitialize]
         public void SetUp()
         {
             factory = new ModeAnalyserFactory();
@@ -56,6 +56,11 @@ namespace MSTesting
 
         }
 
+        /// <summary>
+        /// UC4
+        /// Reflections the using default constructor.
+        /// </summary>
+        /// <exception cref="System.Exception"></exception>
         [TestMethod]
         public void ReflectionUsingDefaultConstructor()
         {
@@ -71,6 +76,83 @@ namespace MSTesting
                 throw new Exception(ex1.Message);
             }
             obj.Equals(expected);
+        }
+
+        /// <summary>
+        /// UC5
+        /// Gets the mood analyser using parametre constructor.
+        /// TC5.1
+        /// </summary>
+        /// <exception cref="System.Exception"></exception>
+        [TestMethod]
+        public void getMoodAnalyserUsingParametreConstructor()
+        {
+            string message = "I am in happy mood";
+            ModeAnalyzer expected = new ModeAnalyzer(message);
+            object actual = null;
+            try
+            {
+                ModeAnalyserFactory factory = new ModeAnalyserFactory();
+                //act
+                actual = factory.CreateMoodAnalyserParameterObject("ModeAnalyzer", "ModeAnalyzer", message);
+
+            }
+            catch (CustomException exception)
+            {
+                throw new Exception(exception.Message);
+            }
+            actual.Equals(expected);
+        }
+
+        /// <summary>
+        /// Gets the mood analyser using parametre constructor1.
+        /// UC5 
+        /// TC5.2 Pass wrong class name
+        /// </summary>
+        /// <exception cref="System.Exception"></exception>
+        [TestMethod]
+        public void getMoodAnalyserUsingParametreConstructorPassWrongClassName()
+        {
+            string message = "I am in happy mood";
+            ModeAnalyzer expected = new ModeAnalyzer(message);
+            object actual = null;
+            try
+            {
+                ModeAnalyserFactory factory = new ModeAnalyserFactory();
+                //act
+                actual = factory.CreateMoodAnalyserParameterObject("ModeAnalyzer123", "ModeAnalyzer", message);
+
+            }
+            catch (CustomException exception)
+            {
+                throw new Exception(exception.Message);
+            }
+            actual.Equals(expected);
+        }
+
+        /// <summary>
+        /// Gets the mood analyser using parametre constructor pass wrong constructor.
+        ///  UC5  TC5.5
+        /// </summary>
+        /// <exception cref="System.Exception"></exception>
+        [TestMethod]
+        public void getMoodAnalyserUsingParametreConstructorPassWrongConstructor()
+        {
+            string message = "I am in happy mood";
+            ModeAnalyzer expected = new ModeAnalyzer(message);
+            object actual = null;
+            try
+            {
+                ModeAnalyserFactory factory = new ModeAnalyserFactory();
+                //act
+                actual = factory.CreateMoodAnalyserParameterObject("ModeAnalyzer", "ModeAnalyzerconstrcutor", message);
+
+            }
+            catch (CustomException exception)
+            {
+                throw new Exception(exception.Message);
+            }
+            actual.Equals(expected);
         }
     }
     
