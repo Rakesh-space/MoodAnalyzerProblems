@@ -8,7 +8,6 @@ namespace MoodAnalyzerProblems
 {
     public class ModeAnalyzer
     {
-
         public string message;
 
         public ModeAnalyzer(string message)
@@ -28,7 +27,8 @@ namespace MoodAnalyzerProblems
             }
             catch (NullReferenceException ex)
             {
-                return "happy";
+                //return "happy";
+                throw new CustomException(CustomException.ExceptionType.NUll_Type_Exception, "Message Should Not Be Null");
             }
         }
 
